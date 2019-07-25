@@ -14,7 +14,7 @@ class Users extends Component {
             setTimeout(() => {
                 this.setState({ current: user })
                 resolve(user)
-            }, 5000)
+            }, 2000)
 
 
         });
@@ -43,6 +43,7 @@ class Users extends Component {
                     <Navbar title="Çalışanlar" />
                     <hr />
                     {
+                        users.lenght ? null :
                         users.map(user => {
                             return (
                                 <User key={user.id}

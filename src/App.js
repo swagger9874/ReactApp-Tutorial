@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import Users from "./component/Users"
-import UserList from "./component/UsersList.json"
+import axios from "axios"
 
 
 
@@ -9,22 +9,24 @@ import UserList from "./component/UsersList.json"
 
 class App extends Component {
   state = {
-    users: UserList
+    users: []
   }
 
+  componentDidMount() {
+    axios.get("https://my-json-server.typicode.com/swagger9874/dataBase/db")
+      .then(res => {
+        this.setState({ users: res.data.users })
+      })
 
-
+  }
 
   render() {
+    console.log(this.state.users)
     return (
       <div>
-        {
-          this.state.loading ?
-          <div className="spinner-border text-primary" role="status">
-            <span className="sr-only">Loading...</span>
-          </div> : null
-        }
-        <Users users={this.state.users}/>
+        <div>
+          <Users users={this.state.users} />
+        </div>
       </div>
     );
   }
