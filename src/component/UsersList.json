@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "name": "Deniz Akgöl",
+      "salary": "5000",
+      "department": "Bilişim",
+      "working" : true
+    },
+    {
+      "id": 2,
+      "name": "Cennet Boran",
+      "salary": "6000",
+      "department": "Yazılım Uzmanı",
+      "working" : true
+    },
+    {
+      "id": 3,
+      "name": "Emre Kurnaz",
+      "salary": "4000",
+      "department": "Muhasebe",
+      "working" : true
+    },
+    {
+      "id": 4,
+      "name": "Eren Şengül",
+      "salary": "Sana Yok",
+      "department": "Saç Bakımı",
+      "working" : true
+    }
+  ]
