@@ -1,24 +1,32 @@
 import React, { Component } from 'react'
 import User from "./User"
 import Show from "./Show"
-import Navbar from "./Navbar"
+import ShowLoading from "./ShowLoading"
+import axios from "axios"
 
 class Users extends Component {
-
-
-
+    state = {
+        users: [],
+        loading : false
+      }
+    
+      componentDidMount() {
+        axios.get("https://my-json-server.typicode.com/swagger9874/dataBase/db")
+          .then(res => {
+            this.setState({ users: res.data.users })
+          })
+    
+      }
+      
     userClicked(user) {
-        this.setState({ current: false })
-        
+        this.setState({loading : !this.state.loading})
         const Promises = new Promise((resolve, reject) => {
             setTimeout(() => {
                 this.setState({ current: user })
+                this.setState({loading : !this.state.loading})
                 resolve(user)
             }, 2000)
-
-
         });
-
         const working = function () {
 
             Promises.then(data => {
@@ -26,24 +34,18 @@ class Users extends Component {
             }).catch(data => {
                 console.log(data)
             })
-
         }
         working();
     }
-
     render() {
-
-        const { users } = this.props
-
-
-
+        const { users } = this.state
         return (
             <div className="row">
                 <div className="col-sm-6">
-                    <Navbar title="Çalışanlar" />
+                    <h2>Çalışanlar</h2>
                     <hr />
                     {
-                        users.lenght ? null :
+                        users.lenght ?  null :
                         users.map(user => {
                             return (
                                 <User key={user.id}
@@ -51,17 +53,13 @@ class Users extends Component {
                                     onClick={(user) => this.userClicked(user)}
                                 />
                             )
-                        })
+                        }) 
                     }
                 </div>
-
                 <div className="col-sm-6">
-                    <Navbar title="Bilgiler" />
+                    <h2>Bilgiler</h2>
                     <hr />
-                    
-                    {this.state && <Show user={this.state.current} />}
-
-
+                    {this.state.loading ? <ShowLoading/> : this.state.current && <Show user={this.state.current}/>}
                 </div>
             </div>
         )
