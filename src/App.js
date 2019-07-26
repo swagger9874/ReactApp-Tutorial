@@ -8,7 +8,7 @@ class App extends Component {
 
           <h1 className="mt-5">Hoşgeldiniz!</h1>
           <p className="lead">Bu bir denemedir.</p>
-          <p>Lütfen sağı solu kurcalayınız!!!</p>
+          <p>Lütfen sağı solu KURCALAYINIZ!!!</p>
 
       </div>
     );
