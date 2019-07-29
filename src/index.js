@@ -5,6 +5,7 @@ import './index.css'
 import App from './App'
 import Users from './component/Users'
 import Navbar from './component/Navbar'
+import List from './component/List'
 import * as serviceWorker from './serviceWorker';
 
 
@@ -14,6 +15,7 @@ const routing = (
         <Navbar/>
         <Route exact path="/" component={App} />
         <Route path="/users" component={Users} />
+        <Route path="/list" component={List} />
       </div>
     </Router>
   )

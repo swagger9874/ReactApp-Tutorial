@@ -8,6 +8,7 @@ const Navbar = props => {
             <div className="bg-dark p-4">
             <button type="button" className="btn btn-secondary"> <Link to="/">Ana Sayfa</Link></button>
             <button type="button" className="btn btn-secondary ml-3"><Link to="/users">Kullanıcılar</Link></button>
+            <button type="button" className="btn btn-secondary ml-3"><Link to="/list">Liste</Link></button>
             </div>
           </div>
           <nav className="navbar navbar-dark bg-dark">
