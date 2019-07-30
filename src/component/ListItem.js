@@ -7,7 +7,7 @@ const ListItem = (props) => (
                 <div className="input-group-prepend">
                     <div className="custom-control custom-checkbox">
                         <input type="checkbox" className="custom-control-input ml-5 mb-3" id={props.listItem.id} 
-                                onClick = {() => console.log(props.listItem)}/>
+                                onClick = {() => props.onClick(props.listItem)}/>
                         <label className="custom-control-label" htmlFor={props.listItem.id}>
                             <h4 className="d-inline">{props.listItem.name}</h4>
                         </label>
