@@ -8,6 +8,8 @@ import Navbar from './component/Navbar'
 import List from './component/List'
 import * as serviceWorker from './serviceWorker';
 
+var db = require("./app_server/models/db")
+
 
 const routing = (
     <Router>
