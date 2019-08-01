@@ -6,9 +6,8 @@ import App from './App'
 import Users from './component/Users'
 import Navbar from './component/Navbar'
 import List from './component/List'
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker'
 
-var db = require("./app_server/models/db")
 
 
 const routing = (

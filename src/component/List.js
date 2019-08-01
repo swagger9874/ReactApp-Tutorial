@@ -44,13 +44,13 @@ class List extends Component {
             .then(res => {
                 res.data.map(item => {
                     if (toMerge1.id === item.id) {
-                        item.mergedId = [...checked1]
+                        item.mergedId = [...checked1, ...item.mergedId]
                         var index = _.findIndex(this.state.merge, { id: item.id });
                         merge1.splice(index, 1)
                         merge1.push(item)
                         this.setState({ merge: merge1 })
                         console.log(this.state.merge)
-                    }
+                    }return
 
                 })
             }).catch(err => {
@@ -59,9 +59,8 @@ class List extends Component {
 
         Axios.post("https://my-json-server.typicode.com/swagger9874/dataBase/merge", this.state.merge)
             .then(res => {
-                return (
                     console.log(res)
-                )
+                
             }).catch(err => {
                 console.log(err)
             })
