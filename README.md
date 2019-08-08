@@ -26,7 +26,9 @@ You can find more about here -> https://lodash.com
 
 # What I learned?
 I learned how to write a React application. Also what state and promise are. I learned how to use them and how they work. <br>
-I used Axios library to get data from my database. So i learned how to use Axios and how it works.
+I used Axios library to get data from my database. So i learned how to use Axios and how it works. <br>
+I used a .json file as database that you can find it here -> https://github.com/swagger9874/dataBase <br>
+This was not a local file. I used a fake server via -> https://my-json-server.typicode.com/swagger9874/dataBase
 
 ## Available Scripts
 
