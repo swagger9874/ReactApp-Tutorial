@@ -49,9 +49,8 @@ class List extends Component {
                         merge1.splice(index, 1)
                         merge1.push(item)
                         this.setState({ merge: merge1 })
-                        console.log(this.state.merge)
-                    }return
-
+                        console.log(this.state.merge) 
+                     }
                 })
             }).catch(err => {
                 console.log(err)
