@@ -25,17 +25,8 @@ class Users extends Component {
                 this.setState({ current: user })
                 this.setState({loading : !this.state.loading})
                 resolve(user)
-            }, 2000)
+            }, 1500)
         });
-        const working = function () {
-
-            Promises.then(data => {
-                console.log(data)
-            }).catch(data => {
-                console.log(data)
-            })
-        }
-        working();
     }
     render() {
         const { users } = this.state
